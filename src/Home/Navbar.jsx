@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 
 const Navbar = () => {
@@ -7,10 +7,10 @@ const Navbar = () => {
         <>
        <li> <NavLink to='/' style={({ isActive }) => ({ 
                 color: isActive ? 'white' : '' })}>Home</NavLink></li>
-        <li> <NavLink to='/blogs'style={({ isActive }) => ({ 
+        <li> <NavLink to='/meals'style={({ isActive }) => ({ 
                 color: isActive ? 'white' : '' })}>Meals</NavLink></li>
-        <li> <NavLink to='/allJobs' style={({ isActive }) => ({ 
-                color: isActive ? 'white' : '' })}>About</NavLink></li>
+        {/* <li> <NavLink to='' style={({ isActive }) => ({ 
+                color: isActive ? 'white' : '' })}>About</NavLink></li> */}
         </>
     
     return (
@@ -34,7 +34,8 @@ const Navbar = () => {
                 <img className="rounded-full w-5 h-5" src="https://images.unsplash.com/photo-1485962093642-5f4386e84429?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjV8fGhvc3RlbCUyMGZvb2QlMjBsb2dvfGVufDB8fDB8fHww" alt="" />
             </div>
             <div className="navbar-end">
-                <button className="btn btn-ghost glass">Join us</button>
+                <Link to="/login"><button className="btn btn-ghost glass">Join us</button></Link>
+                
                 {/* {
                     user && <>
                     <li> <NavLink to='/appliedJobs' style={({ isActive }) => ({ 

@@ -9,8 +9,6 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Footer from "./Footer";
 
-// import { Link } from "react-router-dom";
-
 
 const Home = () => {
     const [meals, setMeals] = useState([]);
@@ -55,7 +53,7 @@ const Home = () => {
                                 <p> Rating: {meal.rating}</p>
                                 <p> Posted On : {meal.post_time}</p>
                                 <p> Distributed By : {meal.admin_name}</p>
-                                <button className="btn glass rounded-lg text-white"><Link to={`/meals/${meal._id}`}> Details</Link></button>
+                                <Link to={`/meals/${meal._id}`} className="btn glass rounded-lg text-white" >Details</Link>
                             </TabPanel>
                             ))}
                             <TabPanel>
@@ -78,7 +76,7 @@ const Home = () => {
                         </TabList>
 
                         {meals
-                            .filter((meal) => meal.category === "dinner")
+                            .filter((meal) => meal.category === "lunch")
                             .slice(0, 4)
                             .map((meal) => (
                             <TabPanel key={meal._id}>
