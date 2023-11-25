@@ -1,0 +1,266 @@
+[
+    {
+        "_id": 1 ,
+        "category": "breakfast",
+        "meal_image": "https://media.istockphoto.com/id/173649938/photo/scrambled-egg-on-toast.jpg?s=2048x2048&w=is&k=20&c=hgkDU4a01DJWUb0BvzEdv7xxogZ-UIVQpMkOr5AXA5Y=",
+        "admin_name": "Breakfast Delights",
+        "meal_description": "Scrambled Eggs with Toast",
+        "ingredients": ["Eggs", "Bread", "Butter", "Salt", "Pepper"],
+        "post_time": "2023-11-24T08:00:00Z",
+        "rating": 4.5,
+        "likes": 120,
+        "meal_request_button": true,
+        "reviews": [
+            {
+                "username": "User123",
+                "comment": "Delicious breakfast option!"
+            },
+            {
+                "username": "FoodieGirl",
+                "comment": "Simple yet tasty!"
+            }
+        ]
+    },
+    {
+        "_id": 2,
+        "category": "breakfast",
+        "meal_image": "https://media.istockphoto.com/id/109726917/photo/whole-wheat-pancakes-with-maple-syrup.webp?b=1&s=170667a&w=0&k=20&c=Wb9NWjnVs2ZS-DtW_ZB6NXd1mlQ2iUWZaxs5yAx52i8=",
+        "admin_name": "Morning Munchies",
+        "meal_description": "Pancakes with Maple Syrup",
+        "ingredients": ["Flour", "Milk", "Eggs", "Baking Powder", "Maple Syrup"],
+        "post_time": "2023-11-24T08:30:00Z",
+        "rating": 4.8,
+        "likes": 120,
+        "meal_request_button": true,
+        "reviews": [
+            {
+                "username": "PancakeLover",
+                "comment": "Absolutely delicious pancakes!"
+            },
+            {
+                "username": "BreakfastFanatic",
+                "comment": "Perfectly fluffy!"
+            }
+        ]
+    },
+    {
+        "_id": 3,
+        "category": "breakfast",
+        "meal_image": "https://media.istockphoto.com/id/1386696628/photo/two-avocado-toast-with-scrambled-egg-on-cutting-board-with-black-background.webp?b=1&s=170667a&w=0&k=20&c=tvErndxz_CAg8-D5zJjMRt1nr6TyBM0wKhEErNKOh9w=",
+        "admin_name": "Admin/Distributor 1",
+        "meal_description": "Scrambled Eggs with Avocado Toast",
+        "ingredients": ["Eggs", "Avocado", "Bread", "Salt", "Pepper"],
+        "post_time": "2023-11-24T08:00:00",
+        "rating": 4.5,
+        "likes": 120,
+        "meal_request_button": true,
+        "reviews": [
+            {
+                "username": "user1",
+                "comment": "Delicious breakfast! I loved it."
+            },
+            {
+                "username": "user2",
+                "comment": "Simple yet satisfying."
+            }
+        ]
+    },
+    {
+        "_id": 4 ,
+        "category": "breakfast",
+        "meal_image": "https://media.istockphoto.com/id/1206969861/photo/close-up-of-fluffy-pancakes-with-maple-syrup-and-blueberries-against-white-wooden-background.webp?b=1&s=170667a&w=0&k=20&c=2VCkgKVgdq7G6PQgDWxjy_L8zmxwGkAXjP_gMctNjhQ=",
+        "admin_name": "Admin/Distributor 2",
+        "meal_description": "Blueberry Pancakes",
+        "ingredients": ["Flour", "Eggs", "Blueberries", "Milk", "Baking Powder"],
+        "post_time": "2023-11-24T08:30:00",
+        "rating": 4.8,
+        "likes": 200,
+        "meal_request_button": true,
+        "reviews": [
+            {
+                "username": "user3",
+                "comment": "Best pancakes ever!"
+            },
+            {
+                "username": "user4",
+                "comment": "Fluffy and delicious."
+            }
+        ]
+    },
+    {
+        "_id": 5,
+        "category": "lunch",
+        "meal_image": "https://media.istockphoto.com/id/1138387868/photo/caesar-salad-with-chicken-breast-meat-on-dark-background.webp?b=1&s=170667a&w=0&k=20&c=f7Ph7fQBykNNQyDLaknuISPysvvlP0aOwL0vZZ4RuC8=",
+        "admin_name": "Admin/Distributor 1",
+        "meal_description": "Chicken Caesar Salad",
+        "ingredients": ["Romaine Lettuce", "Grilled Chicken", "Parmesan Cheese", "Croutons", "Caesar Dressing"],
+        "post_time": "2023-11-24T12:00:00",
+        "rating": 4.5,
+        "likes": 150,
+        "meal_request_button": true,
+        "reviews": [
+          {
+            "username": "user5",
+            "comment": "Great combination of flavors!"
+          },
+          {
+            "username": "user6",
+            "comment": "Fresh and tasty salad."
+          }
+        ]
+      },
+      {
+        "_id": 6,
+        "category": "lunch",
+        "meal_image": "https://media.istockphoto.com/id/1373003983/photo/chili-with-beans-soup-with-nachos.webp?b=1&s=170667a&w=0&k=20&c=60yJCEte0NLeHiUOOFO52py90o9Q-4I7ZVbKUkcVLas=",
+        "admin_name": "Admin/Distributor 2",
+        "meal_description": "Beef Burrito Bowl",
+        "ingredients": ["Rice", "Black Beans", "Grilled Beef", "Salsa", "Guacamole"],
+        "post_time": "2023-11-24T12:30:00",
+        "rating": 4.7,
+        "likes": 180,
+        "meal_request_button": true,
+        "reviews": [
+          {
+            "username": "user7",
+            "comment": "Amazing flavors in one bowl!"
+          },
+          {
+            "username": "user8",
+            "comment": "Satisfying and filling meal."
+          }
+        ]
+      },
+      {
+        "_id": 7,
+        "category": "lunch",
+        "meal_image": "https://media.istockphoto.com/id/1199607353/photo/fresh-chicken-salad.webp?b=1&s=170667a&w=0&k=20&c=RjsK-2GBx3uyx2sklWCVs9ZyRyD-8Ww2YA6xXFhpMRs=",
+        "admin_name": "Admin/Distributor 1",
+        "meal_description": "Caesar Salad",
+        "ingredients": ["Romaine Lettuce", "Croutons", "Parmesan Cheese", "Caesar Dressing"],
+        "post_time": "2023-11-24T12:00:00",
+        "rating": 4.5,
+        "likes": 180,
+        "meal_request_button": true,
+        "reviews": [
+            {
+                "username": "saladlover22",
+                "comment": "Perfect blend of flavors!"
+            },
+            {
+                "username": "healthyeater99",
+                "comment": "Fresh and delicious salad."
+            }
+        ]
+    },
+    {
+        "_id": 8 ,
+        "category": "lunch",
+        "meal_image": "https://media.istockphoto.com/id/1371699671/photo/chicken-wrap-sandwich.webp?b=1&s=170667a&w=0&k=20&c=ggfIwjSJBows90oAPnLvcxzxCKWpYX3q0fuq0fnNbsM=",
+        "admin_name": "Admin/Distributor 2",
+        "meal_description": "Chicken Burrito Bowl",
+        "ingredients": ["Grilled Chicken", "Rice", "Black Beans", "Corn", "Salsa", "Guacamole"],
+        "post_time": "2023-11-24T12:30:00",
+        "rating": 4.9,
+        "likes": 250,
+        "meal_request_button": true,
+        "reviews": [
+            {
+                "username": "mexicanfoodie",
+                "comment": "Amazing flavors in every bite!"
+            },
+            {
+                "username": "proteinlover88",
+                "comment": "Great protein-packed lunch option."
+            }
+        ]
+    }, 
+    {
+        "_id": 9,
+        "category": "dinner",
+        "meal_image": "https://media.istockphoto.com/id/1487018281/photo/roasted-salmon-in-iron-pan.webp?b=1&s=170667a&w=0&k=20&c=7AnLqs6DoqH4MMyiDbMk77hErKy6Abg0JGFEaxVVEYU=",
+        "admin_name": "Admin/Distributor 1",
+        "meal_description": "Grilled Salmon with Vegetables",
+        "ingredients": ["Salmon fillet", "Asparagus", "Bell peppers", "Zucchini", "Olive oil", "Salt", "Pepper"],
+        "post_time": "2023-11-24T18:00:00",
+        "rating": 4.5,
+        "likes": 150,
+        "meal_request_button": true,
+        "reviews": [
+            {
+                "username": "foodlover89",
+                "comment": "Perfectly cooked salmon!"
+            },
+            {
+                "username": "healthymeals22",
+                "comment": "Great balance of flavors."
+            }
+        ]
+    },
+    {
+        "_id": 10 ,
+        "category": "dinner",
+        "meal_image": "https://media.istockphoto.com/id/1474787624/photo/pesto-pasta-salad-with-cherry-tomatoes-and-mozzarella-cheese-healthy-food.webp?b=1&s=170667a&w=0&k=20&c=YbhfeH74STOKAzaFP3QpgHS5pd7jnTDqVFCTPigXqtA=",
+        "admin_name": "Admin/Distributor 2",
+        "meal_description": "Pesto Pasta with Cherry Tomatoes",
+        "ingredients": ["Pasta", "Basil pesto", "Cherry tomatoes", "Garlic", "Parmesan cheese"],
+        "post_time": "2023-11-24T18:30:00",
+        "rating": 4.7,
+        "likes": 180,
+        "meal_request_button": true,
+        "reviews": [
+            {
+                "username": "pastaenthusiast",
+                "comment": "Deliciously simple!"
+            },
+            {
+                "username": "italianfoodlover",
+                "comment": "Authentic flavors."
+            }
+        ]
+    },
+    {
+        "_id": 11,
+        "category": "dinner",
+        "meal_image": "https://media.istockphoto.com/id/1461763640/photo/fried-salmon-fillet-asparagus-and-fried-tomatoes-on-wooden-background.webp?b=1&s=170667a&w=0&k=20&c=RpHUDk_c4p-9fUm0jWZ2nKw9GAYxx70-yp4k55XlWrs=",
+        "admin_name": "Admin/Distributor 1",
+        "meal_description": "Grilled Salmon with Asparagus",
+        "ingredients": ["Salmon fillet", "Asparagus", "Olive oil", "Lemon", "Salt", "Pepper"],
+        "post_time": "2023-11-24T18:00:00",
+        "rating": 4.9,
+        "likes": 350,
+        "meal_request_button": true,
+        "reviews": [
+            {
+                "username": "foodlover88",
+                "comment": "Perfectly cooked salmon!"
+            },
+            {
+                "username": "healthymeals22",
+                "comment": "Great healthy option."
+            }
+        ]
+    },
+    {
+        "_id": 12 ,
+        "category": "dinner",
+        "meal_image": "https://media.istockphoto.com/id/1492861106/photo/closeup-of-a-healthy-and-nutritious-dish-featuring-pasta-colorful-vegetables-and-herbs.webp?b=1&s=170667a&w=0&k=20&c=DyyR364BeMbY588KRgsFv7TdD-QyYdb-iDMBCOLtC-M=",
+        "admin_name": "Admin/Distributor 2",
+        "meal_description": "Pesto Pasta with Roasted Tomatoes",
+        "ingredients": ["Pasta", "Pesto sauce", "Cherry tomatoes", "Garlic", "Parmesan cheese"],
+        "post_time": "2023-11-24T18:30:00",
+        "rating": 4.7,
+        "likes": 280,
+        "meal_request_button": true,
+        "reviews": [
+            {
+                "username": "pastaaficionado",
+                "comment": "Delicious pesto!"
+            },
+            {
+                "username": "tomatolover",
+                "comment": "Roasted tomatoes add a great flavor."
+            }
+        ]
+    }
+]
