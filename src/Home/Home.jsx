@@ -30,7 +30,10 @@ const Home = () => {
             <Navbar></Navbar>
             <Banner></Banner>
 
-            <motion.div className="text-white" style={{backgroundImage: 'url(https://media.istockphoto.com/id/1488844067/photo/old-planks-wall-and-table-with-light-empty-space-vintage-wooden-background-and-spotlight.webp?b=1&s=170667a&w=0&k=20&c=rpvX9p8zUyZPg9zkhbHxxV3BdiBlZ3UkUF0MUxGGEhw=)'}} initial={{ x : 200, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ duration: 3 }}>
+
+            <motion.div className="text-white" style={{backgroundImage: 'url(https://media.istockphoto.com/id/1488844067/photo/old-planks-wall-and-table-with-light-empty-space-vintage-wooden-background-and-spotlight.webp?b=1&s=170667a&w=0&k=20&c=rpvX9p8zUyZPg9zkhbHxxV3BdiBlZ3UkUF0MUxGGEhw=)'}} initial={{ x : 200, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ duration: 2 }}>
+
+                    {/* breakfast items */}
                 <h1 className="font-bold text-3xl  mx-10">Breakfast </h1>
                 <div className="mx-10">
                     <Tabs>
@@ -62,6 +65,7 @@ const Home = () => {
                     </Tabs>
                 </div>
                 
+                                {/* lunch items */}
                 <h1 className="font-bold text-3xl my-4 mx-10">Lunch </h1>
                 <div className="mx-10">
                     <Tabs>
@@ -84,7 +88,7 @@ const Home = () => {
                                 <p> Rating: {meal.rating}</p>
                                 <p> Posted On : {meal.post_time}</p>
                                 <p> Distributed By : {meal.admin_name}</p>
-                                <button className="btn glass rounded-lg text-white"><Link to={`/meals/${meal._id}`}> Details</Link></button>
+                                <Link to={`/meals/${meal._id}`} className="btn glass rounded-lg text-white" >Details</Link>
                             </TabPanel>
                             ))}
                             <TabPanel>
@@ -92,7 +96,7 @@ const Home = () => {
                             </TabPanel>
                     </Tabs>
                 </div>
-
+                                {/* dinner items */}
                 <h1 className="font-bold text-3xl my-4 mx-10">Dinner </h1>
                 <div className="mx-10">
                     <Tabs>
@@ -115,7 +119,7 @@ const Home = () => {
                                 <p> Rating: {meal.rating}</p>
                                 <p> Posted On : {meal.post_time}</p>
                                 <p> Distributed By : {meal.admin_name}</p>
-                                <button className="btn glass rounded-lg text-white"><Link to={`/meals/${meal._id}`}> Details</Link></button>
+                                <Link to={`/meals/${meal._id}`} className="btn glass rounded-lg text-white" >Details</Link>
                             </TabPanel>
                             ))}
                             <TabPanel>
@@ -125,7 +129,7 @@ const Home = () => {
                 </div>
             </motion.div>
 
-
+                                {/*  testmonial section */}
             <motion.div  initial={{ x : 200, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ duration: 4 }}>
                 <h1 className="text-center font-bold text-4xl my-4">Testimonials!</h1>
                 <div className="my-10" style={{backgroundImage: 'url(https://media.istockphoto.com/id/184933994/photo/empty-round-dinner-plate-isolated-on-white-background-clipping-path.webp?b=1&s=170667a&w=0&k=20&c=YmPOOJu4hoEeA7PciVPGgxAIn0qFR48gaZ140uxs7Tc=)' }}>
@@ -143,6 +147,8 @@ const Home = () => {
             </motion.div>
 
 
+
+                                {/* package details */}
             <h1 className="text-center font-bold text-4xl my-4">Upgrade your membership by choosing a package!</h1>
             <div className="flex flex-col lg:flex-row justify-center gap-6 m-10">
                 <div className="card w-96 bg-base-100 shadow-xl image-full">

@@ -3,62 +3,65 @@
 // import { AuthContext } from "../AuthProvider/AuthProvider";
 // import Swal from 'sweetalert2'
 
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import Footer from "../Home/Footer";
 import Navbar from "../Home/Navbar";
+import { useContext } from "react";
+import { AuthContext } from "../Hooks/AuthProvider";
+import Swal from "sweetalert2";
 
 
 const Login = () => {
-    // const { signIn, createUserGoogle, locationState, setLocationState } = useContext(AuthContext);
-    // const location = useLocation();
-    // const navigate = useNavigate();
+    const { signIn, createUserGoogle, locationState, setLocationState } = useContext(AuthContext);
+    const location = useLocation();
+    const navigate = useNavigate();
 
-    // const goToRegister = () => {
-    //     setLocationState(location.state);
-    //     navigate('/register');
-    //     console.log(location.state);
-    // }
+    const goToRegister = () => {
+        setLocationState(location.state);
+        navigate('/register');
+        console.log(location.state);
+    }
 
 
 
-    // const handleLogInWithGoogle = e => {
-    //     e.preventDefault();
+    const handleLogInWithGoogle = e => {
+        e.preventDefault();
     
-    //     createUserGoogle ()
-    //     .then(result => {
-    //         navigate(location?.state? location.state : '/');
-    //         console.log("Logging in with Google is successful!", result.user);
-    //     })
-    //     .catch (error => {
-    //         console.error(error);
-    //     })
-    // }
+        createUserGoogle ()
+        .then(result => {
+            navigate(location?.state? location.state : '/');
+            console.log("Logging in with Google is successful!", result.user);
+        })
+        .catch (error => {
+            console.error(error);
+        })
+    }
 
-    // const handleLogIn = e => {
-    //     e.preventDefault();
-    //     const form = new FormData(e.currentTarget)  ;
+    const handleLogIn = e => {
+        e.preventDefault();
+        const form = new FormData(e.currentTarget)  ;
 
-    //     const email = form.get('email');
-    //     const password = form.get('password');
-    //     console.log(email, password);
+        const email = form.get('email');
+        const password = form.get('password');
+        console.log(email, password);
 
-    //     signIn(email, password)
-    //     .then(result => {
-    //         console.log(result.user)
-    //         navigate(locationState? locationState : '/')
-    //         // return (toast.success("Registered with Google!"));
-    //     })
-    //     .catch(error => {
-    //         console.error("Firebase Error: ", error.code);
-    //         console.error("Firebase Error Message: ", error.message);
-    //         Swal.fire({
-    //             title: 'Error!',
-    //             text: 'Invalid email or password!',
-    //             icon: 'error',
-    //             confirmButtonText: 'ok!'
-    //           })
-    //     })
-    // }
+        signIn(email, password)
+        .then(result => {
+            console.log(result.user)
+            navigate(locationState? locationState : '/')
+            // return (toast.success("Registered with Google!"));
+        })
+        .catch(error => {
+            console.error("Firebase Error: ", error.code);
+            console.error("Firebase Error Message: ", error.message);
+            Swal.fire({
+                title: 'Error!',
+                text: 'Invalid email or password!',
+                icon: 'error',
+                confirmButtonText: 'ok!'
+              })
+        })
+    }
 
 
     return (
@@ -71,7 +74,7 @@ const Login = () => {
                         <p className="py-6">Welcome Back! Please Log In to Your Account</p>
                     </div>
                     <div className="card  w-full lg:p-16 bg-base-100 rounded-lg">
-                        <form   className="card-body">
+                        <form onSubmit={handleLogIn}  className="card-body">
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Email</span>
@@ -92,8 +95,8 @@ const Login = () => {
                             </div>
                         </form>
                         <p className="text-center">Or,</p>
-                        <button  className="btn btn-glass mt-2 rounded-lg">Login with Google!</button>
-                        <p className="mt-4 text-center">New here? Please proceed to <span className="font-bold"><Link to="/register" >Register</Link></span></p>
+                        <button onClick={handleLogInWithGoogle} className="btn btn-glass mt-2 rounded-lg">Login with Google!</button>
+                        <p className="mt-4 text-center">New here? Please proceed to <span className="font-bold"><Link to="/register" onClick={goToRegister}>Register</Link></span></p>
                     </div>
                 </div>    
             </div>

@@ -1,51 +1,72 @@
-
-// import { Link, useNavigate } from "react-router-dom";
-// import { useContext } from "react";
-// import { AuthContext } from "../AuthProvider/AuthProvider";
 import Navbar from "../Home/Navbar";
 import Footer from "../Home/Footer";
-import { Link } from "react-router-dom";
-// import Swal from "sweetalert2";
+import { Link, useNavigate } from "react-router-dom";
+import { AuthContext } from "../Hooks/AuthProvider";
+import { useContext } from "react";
+import useAxiosPublic from "../Hooks/useAxiosPublic";
+import Swal from "sweetalert2";
 
 const Register = () => {
 
-    // const { createUser,locationState } = useContext(AuthContext); 
-    // // console.log("location in register page ", locationState );
-    // const navigate = useNavigate();
+    const axiosPublic = useAxiosPublic();
+    const { createUser,locationState, updateUserProfile } = useContext(AuthContext); 
+    // console.log("location in register page ", locationState );
+    const navigate = useNavigate();
 
 
-    // const handleRegister = e => {
-    //     e.preventDefault();
+    const handleRegister = e => {
+        e.preventDefault();
 
-    //     const form = new FormData(e.currentTarget);
-    //     const name = form.get('name');
-    //     const email = form.get('email');
-    //     const photoURL = form.get('photoURL');
-    //     const password = form.get('password');
+        const form = new FormData(e.currentTarget);
+        const name = form.get('name');
+        const email = form.get('email');
+        const photoURL = form.get('photoURL');
+        const password = form.get('password');
 
     
-    //     // const passwordRegex =  /^(?=.*[A-Z])(?=.*[\W_]).{6,}$/;
+        // const passwordRegex =  /^(?=.*[A-Z])(?=.*[\W_]).{6,}$/;
 
-    //     // if (!passwordRegex.test(password)) {
-    //     //     return (Swal.warning("Password must be at least 6 characters long, contain a capital letter and a special character."));
-    //     // }
+        // if (!passwordRegex.test(password)) {
+        //     return (Swal.warning("Password must be at least 6 characters long, contain a capital letter and a special character."));
+        // }
 
-    //     createUser(email, password, name, photoURL)
-    //     .then(result => {
-    //         console.log(result)
-    //         navigate(locationState? locationState : '/')
-    //         console.log('registered withh email')
-    //         // return (toast.success("Registered with Google!"));
-    //     })
-    //     .catch(error => {
-    //         console.error(error);
-    //         if (error.code === "auth/email-already-in-use") {
-    //             console.log('Registered with Google!');
-    //             // toast.error("Email is already in use!");
-    //           } 
+        createUser(email, password, name, photoURL)
+        .then(result => {
+            console.log(result)
+            navigate(locationState? locationState : '/')
+            console.log('registered withh email')
+            updateUserProfile(name, photoURL)
+            .then(() => {
+                // create user entry in the database
+                const userInfo = {
+                    name: name,
+                    email: email,
+                    badge: "Bronze"
+                }
+                axiosPublic.post('/users', userInfo)
+                    .then(res => {
+                        if (res.data.insertedId) {
+                            console.log('user added to the database')
+                            Swal.fire({
+                                icon: 'success',
+                                title: 'Registered successfully.',
+                                showConfirmButton: false,
+                                timer: 1500
+                            });
+                            navigate('/');
+                        }
+                    })
+            })
+        })
+        .catch(error => {
+            console.error(error);
+            if (error.code === "auth/email-already-in-use") {
+                console.log('Registered with Google!');
+                // toast.error("Email is already in use!");
+              } 
         
-    //     })
-    // }
+        })
+    }
     return (
         <div>
             <Navbar></Navbar>
@@ -56,7 +77,7 @@ const Register = () => {
                         <p className="py-6">Create Your Account and Join Our Community</p>
                     </div>
                     <div className="card flex-shrink-0 w-5/6 lg:px-32 bg-base-100 rounded-lg">
-                        <form  className="card-body">
+                        <form onSubmit={handleRegister} className="card-body">
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Name</span>

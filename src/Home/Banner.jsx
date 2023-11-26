@@ -19,7 +19,7 @@ const Banner = () => {
             <div className="hero-overlay "></div>
             <div className="hero-content text-center text-neutral-content">
                
-            <animated.h1 style={nameAnimation}>
+            <animated.h1 style={nameAnimation} className="glass py-8">
                     <p className="mb-5 text-5xl font-bold">HostelPro</p> 
                     <p className="mb-5 lg:mx-40 font-bold">An intuitive hostel management platform tailored for university campuses, streamlining accommodation bookings, student check-ins, and administrative tasks efficiently.</p>
                     <div className="flex lg:mx-40">

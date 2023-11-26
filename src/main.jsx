@@ -10,6 +10,10 @@ import MealDetails from './MealDetail/MealDetails';
 import Main from './assets/Main';
 import Login from './Forms/Login';
 import Register from './Forms/Register';
+import AuthProvider from './Hooks/AuthProvider';
+import Meals from './MealDetail/Meals';
+import Dashboard from './Layout/Dashboard';
+import Cart from './Pages/Cart';
 
 
 const router = createBrowserRouter([
@@ -25,10 +29,10 @@ const router = createBrowserRouter([
         path:"/meals/:id",
         element:<MealDetails></MealDetails>,
       },
-      // {
-      //   path:"/meals",
-      //   element:<Meal></Meal>
-      // },
+      {
+        path:"/meals",
+        element:<Meals></Meals>
+      },
       {
         path: "/login",
         element:<Login></Login>
@@ -39,10 +43,22 @@ const router = createBrowserRouter([
       }
     ]
   },
+  {
+    path:'/dashboard',
+    element:<Dashboard></Dashboard>,
+    children:[
+      {
+        path:'/dashboard/cart',
+        element:<Cart></Cart>
+      }
+    ]
+  }
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-     <RouterProvider router={router} />
-  </React.StrictMode>,
+  <AuthProvider>
+    <React.StrictMode>
+      <RouterProvider router={router} />
+    </React.StrictMode>
+  </AuthProvider>
 )
