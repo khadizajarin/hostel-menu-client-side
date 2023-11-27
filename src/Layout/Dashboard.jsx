@@ -15,30 +15,38 @@ const Dashboard = () => {
                     <li><NavLink to='/'>Home</NavLink></li>
                     {   isAdmin[0] === true ? <>
                             <li>
-                                <NavLink to="/dashboard/adminHome">
-                                    Admin Home</NavLink>
+                                <NavLink to="/dashboard/profile">
+                                    Admin Profile</NavLink>
                             </li>
                             <li>
-                                <NavLink to="/dashboard/addItems">
-                                    Add Items</NavLink>
+                                <NavLink to="/dashboard/addMeal">
+                                    Add Meal</NavLink>
                             </li>
                             <li>
-                                <NavLink to="/dashboard/manageItems">
-                                    Manage Items</NavLink>
+                                <NavLink to="/dashboard/meals">
+                                    All Meals</NavLink>
                             </li>
                             <li>
                                 <NavLink to="/dashboard/users">
-                                    All Users</NavLink>
+                                    Manage Users</NavLink>
+                            </li>
+                            <li>
+                                <NavLink to="/dashboard/reviews">
+                                    All Reviews</NavLink>
+                            </li>
+                            <li>
+                                <NavLink to="/dashboard/serve">
+                                    Serve Meal</NavLink>
+                            </li>
+                            <li>
+                                <NavLink to="/dashboard/upcoming">
+                                    Upcoming Meal</NavLink>
                             </li>
                             </>
                             : <>
                                 <li>
-                                    <NavLink to="/dashboard/userHome">
-                                        User Home</NavLink>
-                                </li>
-                                <li>
-                                    <NavLink to="/dashboard/cart">
-                                        My Cart </NavLink>
+                                    <NavLink to="/dashboard/profile">
+                                        My profile</NavLink>
                                 </li>
                                 <li>
                                     <NavLink to="/dashboard/review">

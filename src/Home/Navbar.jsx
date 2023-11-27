@@ -28,6 +28,10 @@ const Navbar = () => {
                 color: isActive ? 'white' : '' })}>Meals</NavLink></li>
         <li> <NavLink to='/dashboard/requested' style={({ isActive }) => ({ 
                 color: isActive ? 'white' : '' })}>Requested Meals</NavLink></li>
+        { user && (<>
+        <li> <NavLink to='/dashboard' style={({ isActive }) => ({ 
+                color: isActive ? 'white' : '' })}>Dashboard</NavLink></li>
+        </>)}
         </>
     
     return (

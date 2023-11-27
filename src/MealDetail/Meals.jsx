@@ -40,7 +40,7 @@ const Meals = () => {
             hasMore={true}
             endMessage={
                 <p style={{ textAlign: 'center' }}>
-                <b>Yay! You have seen it all</b>
+                <b>End of Meau</b>
                 </p>
             }>
 
@@ -107,10 +107,11 @@ const Meals = () => {
                                             <p><span className='font-extrabold'>Rating : </span>{meal.rating}</p>
                                             <p><span className='font-extrabold'>Posted On : </span>{meal.post_time}</p>
                                             <p><span className='font-extrabold'>Distributed By : </span>{meal.admin_name}</p>
-                                            <p><span className='font-extrabold'>Ingredients : </span>{meal.ingredients.join(', ')}</p>
+                                            {/* <p><span className='font-extrabold'>Ingredients : </span>{meal.ingredients.join(', ')}</p> */}
+                                            <p><span className='font-extrabold'>Ingredients : </span>{meal.ingredients}</p>
                                             <p><span className='font-extrabold'>Price : $</span>{meal.price}</p>
                                             <p><span className='font-extrabold'>Likes Count : </span>{meal.likes}</p>
-                                            <Link to={`/meals/${meal._id}`}  className="btn glass rounded-lg" >{meal._id}Details</Link>
+                                            <Link to={`/meals/${meal._id}`}  className="btn glass rounded-lg" >Details</Link>
                                         </div>        
                                     </div>
                                     <div className="diff-item-2">

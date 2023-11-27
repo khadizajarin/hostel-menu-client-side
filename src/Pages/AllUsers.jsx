@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-// import useAxiosSecure from "../Hooks/useAxiosPublic";
 import Swal from "sweetalert2";
 import useAxiosSecure from "../Hooks/useAxiosSecure";
 
@@ -9,6 +8,7 @@ const AllUsers = () => {
     const [users, setUsers] = useState([]);
     
     const axiosSecure = useAxiosSecure();
+    
 
     useEffect(() => {
         axiosSecure.get('/users')
@@ -21,21 +21,21 @@ const AllUsers = () => {
     } ,[axiosSecure])
 
 
-    // const handleMakeAdmin = user =>{
-    //     axiosPublic.patch(`/users/${user._id}`)
-    //     .then(res =>{
-    //         console.log(res.data)
-    //         if(res.data.modifiedCount > 0){
-    //             Swal.fire({
-    //                 position: "top-end",
-    //                 icon: "success",
-    //                 title: `${user.name} is an Admin Now!`,
-    //                 showConfirmButton: false,
-    //                 timer: 1500
-    //               });
-    //         }
-    //     })
-    // }
+    const handleMakeAdmin = user =>{
+        axiosSecure.patch(`/users/${user._id}`)
+        .then(res =>{
+            console.log(res.data)
+            if(res.data.modifiedCount > 0){
+                Swal.fire({
+                    position: "top-end",
+                    icon: "success",
+                    title: `${user.name} is an Admin Now!`,
+                    showConfirmButton: false,
+                    timer: 1500
+                  });
+            }
+        })
+    }
 
 
     const handleDeleteUser = user => {
@@ -50,7 +50,7 @@ const AllUsers = () => {
         }).then((result) => {
             if (result.isConfirmed) {
 
-                axiosPublic.delete(`/users/${user._id}`)
+                axiosSecure.delete(`/users/${user._id}`)
                     .then(res => {
                         if (res.data.deletedCount > 0) {
                             Swal.fire({
@@ -86,7 +86,7 @@ const AllUsers = () => {
                                 <td>{user.name}</td>
                                 <td>{user.email}</td>
                                 <td>{ user.role === 'admin' ? 'Admin' : <button
-                                        // onClick={() => handleMakeAdmin(user)}
+                                        onClick={() => handleMakeAdmin(user)}
                                         className="glass">User</button>}
                                 </td>
                                 <td>{user.badge}</td>

@@ -20,6 +20,10 @@ import {
   QueryClient,
   QueryClientProvider,
 } from '@tanstack/react-query'
+import AddMeal from './Pages/AddMeal';
+import AdminMeal from './Pages/AdminMeal';
+import AllReviews from './Pages/AllReviews';
+import Profile from './Pages/Profile';
 
 const queryClient = new QueryClient();
 
@@ -63,6 +67,22 @@ const router = createBrowserRouter([
       {
         path:'/dashboard/users',
         element:<AllUsers></AllUsers>
+      },
+      {
+        path:'/dashboard/addMeal',
+        element:<AddMeal></AddMeal>
+      },
+      {
+        path: '/dashboard/meals',
+        element : <AdminMeal></AdminMeal>
+      },
+      {
+        path:'/dashboard/reviews',
+        element: <AllReviews></AllReviews>
+      },
+      {
+        path:'/dashboard/profile',
+        element: <Profile></Profile>
       }
     ]
   }
@@ -71,10 +91,10 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById('root')).render(
   <QueryClientProvider client={queryClient}>
     <AuthProvider>
-    <React.StrictMode>
-      <RouterProvider router={router} />
-    </React.StrictMode>
-  </AuthProvider>
+      <React.StrictMode>
+        <RouterProvider router={router} />
+      </React.StrictMode>
+    </AuthProvider>
   </QueryClientProvider>
   
 )
