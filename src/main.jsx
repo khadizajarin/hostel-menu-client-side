@@ -13,13 +13,22 @@ import Register from './Forms/Register';
 import AuthProvider from './Hooks/AuthProvider';
 import Meals from './MealDetail/Meals';
 import Dashboard from './Layout/Dashboard';
-import Cart from './Pages/Cart';
+import ErrorRoute from './Pages/ErrorRoute';
+import AllUsers from './Pages/AllUsers';
+import Requested from './Pages/Requested';
+import {
+  QueryClient,
+  QueryClientProvider,
+} from '@tanstack/react-query'
+
+const queryClient = new QueryClient();
 
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Main></Main>,
+    errorElement:<ErrorRoute></ErrorRoute>,
     children:[
       {
         path:"/",
@@ -48,17 +57,24 @@ const router = createBrowserRouter([
     element:<Dashboard></Dashboard>,
     children:[
       {
-        path:'/dashboard/cart',
-        element:<Cart></Cart>
+        path:'/dashboard/requested',
+        element:<Requested></Requested>
+      },
+      {
+        path:'/dashboard/users',
+        element:<AllUsers></AllUsers>
       }
     ]
   }
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <AuthProvider>
+  <QueryClientProvider client={queryClient}>
+    <AuthProvider>
     <React.StrictMode>
       <RouterProvider router={router} />
     </React.StrictMode>
   </AuthProvider>
+  </QueryClientProvider>
+  
 )

@@ -26,8 +26,8 @@ const Navbar = () => {
                 color: isActive ? 'white' : '' })}>Home</NavLink></li>
         <li> <NavLink to='/meals'style={({ isActive }) => ({ 
                 color: isActive ? 'white' : '' })}>Meals</NavLink></li>
-        <li> <NavLink to='/dashboard/cart' style={({ isActive }) => ({ 
-                color: isActive ? 'white' : '' })}>Cart</NavLink></li>
+        <li> <NavLink to='/dashboard/requested' style={({ isActive }) => ({ 
+                color: isActive ? 'white' : '' })}>Requested Meals</NavLink></li>
         </>
     
     return (

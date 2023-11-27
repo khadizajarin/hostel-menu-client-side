@@ -9,12 +9,14 @@ import Navbar from "../Home/Navbar";
 import { useContext } from "react";
 import { AuthContext } from "../Hooks/AuthProvider";
 import Swal from "sweetalert2";
+import useAxiosPublic from "../Hooks/useAxiosPublic";
 
 
 const Login = () => {
-    const { signIn, createUserGoogle, locationState, setLocationState } = useContext(AuthContext);
+    const { signIn, createUserGoogle, locationState, setLocationState,updateUserProfile } = useContext(AuthContext);
     const location = useLocation();
     const navigate = useNavigate();
+    const axiosPublic = useAxiosPublic();
 
     const goToRegister = () => {
         setLocationState(location.state);
@@ -31,6 +33,28 @@ const Login = () => {
         .then(result => {
             navigate(location?.state? location.state : '/');
             console.log("Logging in with Google is successful!", result.user);
+            updateUserProfile(result.user.displayVame, result.user.photoURL)
+            .then(() => {
+                const userInfo = {
+                    name: result.user.displayName,
+                    email: result.user.email,
+                    badge: "Bronze",
+                    role: "user"
+                }
+                axiosPublic.post('/users', userInfo)
+                    .then(res => {
+                        if (res.data.insertedId) {
+                            console.log('user added to the database')
+                            Swal.fire({
+                                icon: 'success',
+                                title: 'Registered successfully.',
+                                showConfirmButton: false,
+                                timer: 1500
+                            });
+                            navigate('/');
+                        }
+                    })
+            })
         })
         .catch (error => {
             console.error(error);
@@ -49,7 +73,6 @@ const Login = () => {
         .then(result => {
             console.log(result.user)
             navigate(locationState? locationState : '/')
-            // return (toast.success("Registered with Google!"));
         })
         .catch(error => {
             console.error("Firebase Error: ", error.code);
