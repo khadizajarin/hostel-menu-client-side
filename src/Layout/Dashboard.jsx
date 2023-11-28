@@ -9,9 +9,9 @@ const Dashboard = () => {
     console.log(isAdmin[0]);
 
     return (
-        <div className="flex">
-            <div className="w-96 min-h-full bg-stone-500">
-                <ul className="menu">
+        <div className="flex ">
+            <div className="w-96 max-h-full bg-stone-500">
+                <ul className="menu ">
                     <li><NavLink to='/'>Home</NavLink></li>
                     {   isAdmin[0] === true ? <>
                             <li>
@@ -49,7 +49,7 @@ const Dashboard = () => {
                                         My profile</NavLink>
                                 </li>
                                 <li>
-                                    <NavLink to="/dashboard/review">
+                                    <NavLink to="/dashboard/userReview">
                                         My reviews</NavLink>
                                 </li>
                                 <li>

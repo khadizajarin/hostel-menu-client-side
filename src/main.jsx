@@ -24,6 +24,7 @@ import AddMeal from './Pages/AddMeal';
 import AdminMeal from './Pages/AdminMeal';
 import AllReviews from './Pages/AllReviews';
 import Profile from './Pages/Profile';
+import UserReviews from './Pages/UserReviews';
 
 const queryClient = new QueryClient();
 
@@ -83,6 +84,10 @@ const router = createBrowserRouter([
       {
         path:'/dashboard/profile',
         element: <Profile></Profile>
+      },
+      {
+        path:'/dashboard/userReview',
+        element: <UserReviews></UserReviews>
       }
     ]
   }

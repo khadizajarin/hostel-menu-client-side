@@ -22,12 +22,10 @@ const Navbar = () => {
     }
     const navlink = 
         <>
-       <li> <NavLink to='/' style={({ isActive }) => ({ 
+        <li> <NavLink to='/' style={({ isActive }) => ({ 
                 color: isActive ? 'white' : '' })}>Home</NavLink></li>
         <li> <NavLink to='/meals'style={({ isActive }) => ({ 
                 color: isActive ? 'white' : '' })}>Meals</NavLink></li>
-        <li> <NavLink to='/dashboard/requested' style={({ isActive }) => ({ 
-                color: isActive ? 'white' : '' })}>Requested Meals</NavLink></li>
         { user && (<>
         <li> <NavLink to='/dashboard' style={({ isActive }) => ({ 
                 color: isActive ? 'white' : '' })}>Dashboard</NavLink></li>
@@ -52,7 +50,7 @@ const Navbar = () => {
             </div>
             <div className="navbar-center btn glass">
                 <a className="btn btn-ghost text-xl">HostelPro</a>
-                <img className="rounded-full w-5 h-5" src="https://images.unsplash.com/photo-1485962093642-5f4386e84429?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjV8fGhvc3RlbCUyMGZvb2QlMjBsb2dvfGVufDB8fDB8fHww" alt="" />
+                <img className="rounded-full w-5 h-5 md:block hidden" src="https://images.unsplash.com/photo-1485962093642-5f4386e84429?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjV8fGhvc3RlbCUyMGZvb2QlMjBsb2dvfGVufDB8fDB8fHww" alt="" />
             </div>
             <div className="navbar-end">
                {user ? (

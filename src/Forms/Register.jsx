@@ -37,7 +37,6 @@ const Register = () => {
             console.log('registered withh email')
             updateUserProfile(name, photoURL)
             .then(() => {
-                // create user entry in the database
                 const userInfo = {
                     name: name,
                     email: email,
@@ -63,7 +62,6 @@ const Register = () => {
             console.error(error);
             if (error.code === "auth/email-already-in-use") {
                 console.log('Registered with Google!');
-                // toast.error("Email is already in use!");
               } 
         
         })

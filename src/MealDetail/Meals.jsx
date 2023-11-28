@@ -31,6 +31,9 @@ const Meals = () => {
 
         setMatchedItems(filteredItems);
     };
+
+
+    
     return (
 
         <div>
@@ -82,7 +85,7 @@ const Meals = () => {
                                                         <p><span className='font-extrabold'>Ingredients : </span>{item.ingredients.join(', ')}</p>
                                                         <p><span className='font-extrabold'>Price : $ </span>{item.price}</p>
                                                         <p><span className='font-extrabold'>Likes Count : </span>{item.likes}</p>
-                                                        <Link to={`/meals/${item._id}`} className="btn glass rounded-lg" >Details</Link>
+                                                        <Link to={`/meals/${item._id}`} className="btn glass rounded-lg" ><button>Details</button></Link>
                                                     </div>        
                                                 </div>
                                                 <div className="diff-item-2">
@@ -111,7 +114,7 @@ const Meals = () => {
                                             <p><span className='font-extrabold'>Ingredients : </span>{meal.ingredients}</p>
                                             <p><span className='font-extrabold'>Price : $</span>{meal.price}</p>
                                             <p><span className='font-extrabold'>Likes Count : </span>{meal.likes}</p>
-                                            <Link to={`/meals/${meal._id}`}  className="btn glass rounded-lg" >Details</Link>
+                                            <Link to={`/meals/${meal._id}`} className="btn glass rounded-lg" >Details</Link>
                                         </div>        
                                     </div>
                                     <div className="diff-item-2">

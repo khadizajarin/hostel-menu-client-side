@@ -12,7 +12,7 @@ const image_hosting_api = `https://api.imgbb.com/1/upload?key=${image_hosting_ke
 
 const AddMeal = () => {
     const {user} = useContext(AuthContext);
-    const { register, handleSubmit, reset } = useForm();
+    const { register, handleSubmit } = useForm();
     const axiosPublic = useAxiosPublic();
     const axiosSecure = useAxiosSecure();
     const onSubmit = async (data) => {
@@ -57,7 +57,7 @@ const AddMeal = () => {
             <h2 style ={{backgroundImage: `url(${"https://media.istockphoto.com/id/1204032062/photo/woman-choosing-food-in-open-buffet-at-breakfast-in-hotel.jpg?s=2048x2048&w=is&k=20&c=c7OEmAJCWxNWlhUfIwkJLQ2Dlhe5ASKzSNzmyZWvRPM="})`,
           }} className="text-4xl text-center p-4 font-extrabold" >Add a Meal to the Menu</h2>
             
-            <form onSubmit={handleSubmit(onSubmit)}>
+            <form className="justify-center items-center h-screen m-10" onSubmit={handleSubmit(onSubmit)}>
                     <div className="form-control w-full my-6">
                         <label className="label">
                             <span className="label-text">Meal name*</span>
@@ -129,7 +129,7 @@ const AddMeal = () => {
                         {/* admin name */}
                         <div className="form-control w-full my-6">
                             <label className="label">
-                                <span className="label-text">Likes</span>
+                                <span className="label-text">Distributor name:</span>
                             </label>
                             <input
                                 type="text"
@@ -141,7 +141,7 @@ const AddMeal = () => {
                         {/* admin email */}
                         <div className="form-control w-full my-6">
                             <label className="label">
-                                <span className="label-text">Reviews</span>
+                                <span className="label-text">Distributor email:</span>
                             </label>
                             <input
                                 type="text"
@@ -151,7 +151,6 @@ const AddMeal = () => {
                         </div>
 
                     </div>
-
 
                     {/*ingredients*/}
                     <div className="form-control">

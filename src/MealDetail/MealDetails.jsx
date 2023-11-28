@@ -29,11 +29,40 @@ const MealDetails = () => {
             axiosPublic.post(`/meals/${id}/reviews`, reviewData) 
             .then((response) => {
               console.log(response.data);
-            })
+              if (response.data) {
+                Swal.fire({
+                    icon: 'success',
+                    title: 'your review was posted successfully. to see your reviews, go to My reviews.',
+                    showConfirmButton: false,
+                    timer: 1500
+                })
+        }})
             .catch((error) => {
               console.error('Error sending data:', error);
             });
         };
+
+        const handleRequest = (object,user) => {
+            const name = user.displayName;
+            const email = user.email;
+            const requestedMeal  = { name, email, fetchedMeal};
+            console.log(requestedMeal);
+            axiosPublic.post('/requests', requestedMeal)
+              .then((response) => {
+                console.log(response.data);
+                if (response.data.insertedId) {
+                  Swal.fire({
+                    icon: "success",
+                    title: 'Request have been sent',
+                    text: 'See all requested meal in the My Request.',
+                    timer: 2000
+                  });
+                }
+              })
+              .catch((error) => {
+                console.error(error);
+              });
+        }
 
     useEffect(() => {
         axiosPublic.get(`/meals/${id}`)
@@ -111,7 +140,7 @@ const MealDetails = () => {
                     </div>
                     <div>
                         <button className='btn glass rounded-lg' onClick={handleLikes} disabled={!user}>{likes} Likes</button>
-                        <button className='btn glass rounded-lg' disabled={!user}>Meal Request</button>
+                        <button className='btn glass rounded-lg' onClick={() => handleRequest(fetchedMeal,user)} disabled={!user}>Meal Request</button>
                     </div>
                     <p className='font-extrabold text-xl'>We would love to have your opinion about this item!</p>
                     <input type="text" placeholder="Type here" className="input input-bordered input-lg w-full max-w-xs" value={inputText} onChange={handleInputChange}/>
