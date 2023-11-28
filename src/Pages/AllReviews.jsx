@@ -1,5 +1,8 @@
 import { useEffect, useState } from "react";
 import useAxiosPublic from "../Hooks/useAxiosPublic";
+import { Link } from "react-router-dom";
+import { AwesomeButton } from 'react-awesome-button';
+import 'react-awesome-button/dist/styles.css';
 
 
 const AllReviews = () => {
@@ -30,11 +33,15 @@ const AllReviews = () => {
                                 <h2 className="card-title">{}</h2>
                                 <h2><span className='font-extrabold'>Item name : </span>{meal.meal_description} </h2>   
                                 {meal && Array.isArray(meal.reviews) && meal.reviews.map((review, index) => (
-                                    <div className="my-2" key={index}>
+                                    <><div className="my-2" key={index}>
                                         <p>Username: {review.username}</p>
                                         <p>Comment: {review.comment}</p>
+                                        <p>Likes: {meal.likes}</p>
+                                        <p>Rating: {meal.rating}</p>
                                     </div>
+                                    </>
                                 ))}
+                                <Link to={`/meals/${meal._id}`}><AwesomeButton type="primary">Meal Details</AwesomeButton></Link>
                             </div>
                         </div>
                   </div>

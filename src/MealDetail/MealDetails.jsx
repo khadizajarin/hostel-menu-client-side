@@ -146,8 +146,8 @@ const MealDetails = () => {
                     </div>
                     <p className='font-extrabold text-xl'>We would love to have your opinion about this item!</p>
                     <input type="text" placeholder="Type here" className="input input-bordered input-lg w-full max-w-xs" value={inputText} onChange={handleInputChange}/>
-                    <AwesomeButton type="primary">Request Meal</AwesomeButton>
                     <button className=" w-full max-w-xs" onClick={handleReview}>Post your review!</button>
+                    <AwesomeButton type="primary">Request Meal</AwesomeButton>
                 </div>
             </div>
             <Footer />
