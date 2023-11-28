@@ -25,6 +25,8 @@ import AdminMeal from './Pages/AdminMeal';
 import AllReviews from './Pages/AllReviews';
 import Profile from './Pages/Profile';
 import UserReviews from './Pages/UserReviews';
+import ServeMeal from './Pages/ServeMeal';
+import Upcoming from './Pages/Upcoming';
 
 const queryClient = new QueryClient();
 
@@ -88,6 +90,14 @@ const router = createBrowserRouter([
       {
         path:'/dashboard/userReview',
         element: <UserReviews></UserReviews>
+      },
+      {
+        path:'/dashboard/serve',
+        element : <ServeMeal></ServeMeal>
+      },
+      {
+        path:'/dashboard/upcoming',
+        element: <Upcoming></Upcoming>
       }
     ]
   }
