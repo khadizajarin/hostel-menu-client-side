@@ -160,8 +160,10 @@ const Home = () => {
 
       
 
-                                {/* package details */}
-            <h1 className="text-center font-bold text-4xl my-4">Upgrade your membership by choosing a package!</h1>   
+                                {/* package details */} 
+            <motion.div  initial={{ x : 200, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ duration: 4 }}>
+                <h1 className="text-center font-bold text-4xl my-4">Upgrade your membership by choosing a package!</h1>
+            </motion.div>
             <div>
                 <Badge></Badge>
             </div>

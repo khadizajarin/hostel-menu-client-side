@@ -27,6 +27,8 @@ import Profile from './Pages/Profile';
 import UserReviews from './Pages/UserReviews';
 import ServeMeal from './Pages/ServeMeal';
 import Upcoming from './Pages/Upcoming';
+import PrivateRoute from './Hooks/PrivateRoute';
+import AdminRoute from './Hooks/AdminRoute';
 
 const queryClient = new QueryClient();
 
@@ -43,7 +45,7 @@ const router = createBrowserRouter([
       },
       {
         path:"/meals/:id",
-        element:<MealDetails></MealDetails>,
+        element:<PrivateRoute><MealDetails></MealDetails></PrivateRoute>,
       },
       {
         path:"/meals",
@@ -65,39 +67,39 @@ const router = createBrowserRouter([
     children:[
       {
         path:'/dashboard/requested',
-        element:<Requested></Requested>
+        element:<PrivateRoute><Requested></Requested></PrivateRoute>
       },
       {
         path:'/dashboard/users',
-        element:<AllUsers></AllUsers>
+        element:<AdminRoute><AllUsers></AllUsers></AdminRoute>
       },
       {
         path:'/dashboard/addMeal',
-        element:<AddMeal></AddMeal>
+        element:<AdminRoute><AddMeal></AddMeal></AdminRoute>
       },
       {
         path: '/dashboard/meals',
-        element : <AdminMeal></AdminMeal>
+        element : <AdminRoute><AdminMeal></AdminMeal></AdminRoute>
       },
       {
         path:'/dashboard/reviews',
-        element: <AllReviews></AllReviews>
+        element: <AdminRoute><AllReviews></AllReviews></AdminRoute>
       },
       {
         path:'/dashboard/profile',
-        element: <Profile></Profile>
+        element: <PrivateRoute><Profile></Profile></PrivateRoute>
       },
       {
         path:'/dashboard/userReview',
-        element: <UserReviews></UserReviews>
+        element: <PrivateRoute><UserReviews></UserReviews></PrivateRoute>
       },
       {
         path:'/dashboard/serve',
-        element : <ServeMeal></ServeMeal>
+        element : <AdminRoute><ServeMeal></ServeMeal></AdminRoute>
       },
       {
         path:'/dashboard/upcoming',
-        element: <Upcoming></Upcoming>
+        element: <AdminRoute><Upcoming></Upcoming></AdminRoute>
       }
     ]
   }
