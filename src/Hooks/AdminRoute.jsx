@@ -17,7 +17,8 @@ const AdminRoute = ({ children }) => {
               <span className="loading loading-ball loading-lg"></span>
               <span className="loading loading-ball loading-lg"></span>
             </div>
-          );
+          );// testing github
+          
     }
 
     if (user && isAdmin) {
